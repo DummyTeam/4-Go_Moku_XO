@@ -30,7 +30,6 @@ var cross_counter = 0;
 
 var game_over = false;
 
-
 var victory_text = ' <img src="images/white_logo_xo.png" width="110" style="position: absolute; margin: auto; margin-top: 55px;"> You win, X Player!';
 
 var opacity_anim_class = "opacity-animational";
@@ -40,7 +39,8 @@ var opacity_anim_class = "opacity-animational";
 function putACrossHere () {
 
 	var ok = true;
-	if (ok === true) 
+
+	if (ok === true)
 	{
 
 		XPosition -= slide_coefficientX;
@@ -52,7 +52,7 @@ function putACrossHere () {
 		y = YPosition/sizeOfCell;
 		x = XPosition/sizeOfCell;
 
-		if (visited[x][y] > 0) 
+		if (visited[x][y] > 0)
 		{
 			return;
 		}
@@ -66,13 +66,13 @@ function putACrossHere () {
 
 
 		var r_or_c= 0;
-		
+
 
 		if(counter%2 != 0)
 		{
 			div.className = cross_class;
 			r_or_c= cross_player_id;
-			
+
 			cross_turn.innerHTML = (++cross_counter+'');
 
 			ring_turn.parentNode.className += " "+ opacity_anim_class;
@@ -81,9 +81,9 @@ function putACrossHere () {
 		}else{
 			div.className = ring_class;
 			r_or_c= ring_player_id;
-			
+
 			ring_turn.innerHTML = (++ring_counter+'');
-			
+
 			ring_turn.parentNode.className = removeLastWord(ring_turn.parentNode.className);
 			cross_turn.parentNode.className += " " + opacity_anim_class;
 
@@ -104,9 +104,9 @@ function putACrossHere () {
 
 		//TODO: Create all div-s beforehand with position containing id-s
 		//		for creating hover effect to increase UX and UI design!
-		document.getElementById('matharea').appendChild(div); 
+		document.getElementById('matharea').appendChild(div);
 		visited[x][y] = r_or_c;
-		
+
 
 		if(checkForWin(x,y,r_or_c) == true)
 		{
@@ -214,8 +214,8 @@ function checkFirstDiagonal(x, y, player, check_value)
 	var down_counter = 0;
 	var down_cont = true;
 
-	for(var yup = y-1, xup = x-1,   ydown = y+1 , xdown = x+1;  
-		((ydown < num_of_rows && xdown < num_of_columns) || (yup >= 0 && xup >= 0 ) ) && (up_cont || down_cont); 
+	for(var yup = y-1, xup = x-1,   ydown = y+1 , xdown = x+1;
+		((ydown < num_of_rows && xdown < num_of_columns) || (yup >= 0 && xup >= 0 ) ) && (up_cont || down_cont);
 		yup--,ydown++,xup--, xdown++)
 	{
 		if(xup >= 0 && yup >= 0 && up_cont && visited[xup][yup] == player)
@@ -254,8 +254,8 @@ function checkSecondDiagonal(x, y, player, check_value)
 	var down_counter = 0;
 	var down_cont = true;
 
-	for(var yup = y-1, xup = x+1,   ydown = y+1 , xdown = x-1;  
-		((ydown < num_of_rows && xdown >= 0) || (yup >= 0 && xup < num_of_columns ) ) && (up_cont || down_cont); 
+	for(var yup = y-1, xup = x+1,   ydown = y+1 , xdown = x-1;
+		((ydown < num_of_rows && xdown >= 0) || (yup >= 0 && xup < num_of_columns ) ) && (up_cont || down_cont);
 		yup--,ydown++,xup++, xdown--)
 	{
 		if(xup <num_of_columns && yup >= 0 && up_cont && visited[xup][yup] == player)
@@ -300,18 +300,18 @@ function mainLoop()
 	onmousedown = function(e)
 	{
 		XPosition = e.clientX;
-		YPosition = e.clientY;	
+		YPosition = e.clientY;
 	}
 }
 
 function removeLastWord(words) {
 	var n = words.split(" ");
-	
+
 	if (n[n.length-1] != opacity_anim_class) {return words;}
 
 	var str = "";
 
-	for (var i = 0; i < n.length-1; i++) 
+	for (var i = 0; i < n.length-1; i++)
 	{
 		str += n[i] + " ";
 	}
@@ -327,9 +327,9 @@ function replaceWinnerName(winner) {
 	var n = victory_text.split(" ");
 
 	var str = "";
-	for (var i = 0; i < n.length; i++) 
+	for (var i = 0; i < n.length; i++)
 	{
-		if (n[i] == 'X') 
+		if (n[i] == 'X')
 		{
 			n[i] = capitalizeFirstLetter(winner);
 		}
