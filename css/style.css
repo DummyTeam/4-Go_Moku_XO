@@ -23,7 +23,7 @@ body {
   height: auto;
   padding: 30px;
   background-color: #fff;
-  margin: 20px auto;
+  margin: 15px auto;
   box-shadow: 5px 15px 15px 10px rgba(140, 140, 140, 0.3);
   border-radius: 15px;
 }
@@ -66,7 +66,7 @@ body {
 .cross {
   background-image: url('../images/CrossTransparent.png');
   width:  3.57142857%;
-  height: 4.996%;
+  height: 5.02%;
   background-size: cover;
   background-color: #34b3a0;
 }
@@ -76,7 +76,7 @@ body {
   background-size: cover;
   background-color: #e42727;
   width:  3.57142857%;
-  height: 4.996%;
+  height: 5.02%;
 }
 
 .turn-container {

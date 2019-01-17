@@ -17,7 +17,7 @@ var num_of_columns = 28;
 
 //4000x5612
 var sizeOfCellX = 3.57142857;
-var sizeOfCellY = 4.996;
+var sizeOfCellY = 5.01;
 
 var lastMove = '';
 
@@ -31,7 +31,7 @@ var cross_counter = 0;
 
 var game_over = false;
 
-var victory_text = ' <img src="images/white_logo_xo.png" width="110" style="position: absolute; margin: auto; margin-top: 55px;"> You win, X Player!';
+var victory_text = ' <img src="images/white_logo_xo.png" onclick="location.reload()" width="110" style="position: absolute; margin: auto; margin-top: 55px; cursor: pointer;"> You win, X Player!';
 
 var opacity_anim_class = "opacity-animational";
 
@@ -283,7 +283,6 @@ function replaceWinnerName(winner) {
 }
 
 function undo() {
-  //	div.id = "x" + x+"-y" + y + "-p" + r_or_c;
   if (lastMove == "") {
     alert("You can use 'Undo' only once!");
     return;
