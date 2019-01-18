@@ -3,6 +3,10 @@ var area = document.getElementById('matharea');
 var XPosition = 0;
 var YPosition = 0;
 
+
+var XOffset = 0;
+var YOffset = 0;
+
 var cross_class = "cross";
 var ring_class = "ring";
 
@@ -244,8 +248,9 @@ function mainLoop() {
   }
 
   onmousedown = function(e) {
-    XPosition = e.clientX;
-    YPosition = e.clientY;
+    XPosition = e.pageX;
+    YPosition = e.pageY;
+	
   }
 }
 
